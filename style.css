@@ -1,0 +1,15 @@
+html, body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+main div {
+  border: 1px solid black;
+  /* flex-basis: 100%; */
+}
