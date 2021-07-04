@@ -1,26 +1,86 @@
 html, body {
   height: 100%;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: #c9c9c9;
+  background-color: #f6f6f6;
 }
 
 main {
   height: 100%;
-  margin: 0 15%;
+  margin: 0 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
+.bold {
+  font-weight: 700;
+  color: #2e364d;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+.big {
+  font-size: 1.2rem;
+}
+
 .main-section {
   height: 20%;
-  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  padding: 1rem 2rem;
+  background-color: white;
+  display: flex;
+}
+
+.click:hover {
+  cursor: pointer;
+}
+
+#big-temp {
+  font-size: 5rem;
+}
+
+#search-box {
+  height: 1.5rem;
+  align-items: center;
+}
+
+#search-box > input {
+  padding-left: 10px;
+  width: 100%;
+  border: none;
+}
+
+#search-box > input:focus {
+  outline: none;
+}
+
+#top-box, #middle-box, #bottom-box {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#top-box > div:first-child, #middle-box > div:first-child, #bottom-box > div:first-child {
+  align-self: stretch;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#middle-box > div, #bottom-box > div {
+#middle-box > div:first-child > div, #bottom-box > div:first-child > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#middle-box > div:first-child {
+  padding-top: 1rem;
+}
+
+#bottom-box > div:first-child {
+  padding-top: 1.5rem;
 }

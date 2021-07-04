@@ -1,5 +1,7 @@
 import * as svg from "./svg";
 
+document.querySelector("#search-box > input").focus();
+
 document.querySelector("#big-icon").appendChild(svg.bigSun);
 document.querySelectorAll("#middle-box .time-icon")[0].appendChild(svg.smallSun.cloneNode(true));
 document.querySelectorAll("#middle-box .time-icon")[1].appendChild(svg.smallCloud.cloneNode(true));
