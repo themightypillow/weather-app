@@ -3,75 +3,150 @@
 <head>
   <meta charset="utf-8">
   <title>Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
+    <div id="search-box" class="main-section">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#c9c9c9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="10" cy="10" r="7" />
+        <line x1="21" y1="21" x2="15" y2="15" />
+      </svg>
+      <input type="text" placeholder="New York, NY">
+    </div>
     <div id="top-box" class="main-section">
       <div>
-        <div>23°</div>
-        <div>Coimbra, Portugal</div>
+        <div>
+          <div id="big-temp" class="bold">23°</div>
+          <div>New York, NY</div>
+        </div>
+        <div id="big-icon"></div>
       </div>
-      <div id="big-icon"></div>
+      <div>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#2e364d" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#c9c9c9" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+      </div>
     </div>
     <div id="middle-box" class="main-section">
       <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>12:00</div>
-        <div>AM</div>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" stroke="#c9c9c9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <polyline points="15 6 9 12 15 18" />
+        </svg>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">12:00</div>
+          <div class="small">AM</div>
+        </div>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">1:00</div>
+          <div class="small">AM</div>
+        </div>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">2:00</div>
+          <div class="small">AM</div>
+        </div>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">3:00</div>
+          <div class="small">AM</div>
+        </div>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">4:00</div>
+          <div class="small">AM</div>
+        </div>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" stroke="#c9c9c9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <polyline points="9 6 15 12 9 18" />
+        </svg>
       </div>
       <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>1:00</div>
-        <div>AM</div>
-      </div>
-      <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>2:00</div>
-        <div>AM</div>
-      </div>
-      <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>3:00</div>
-        <div>AM</div>
-      </div>
-      <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>4:00</div>
-        <div>AM</div>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#2e364d" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#c9c9c9" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#c9c9c9" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#c9c9c9" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#c9c9c9" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
       </div>
     </div>
     <div id="bottom-box" class="main-section">
       <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>Mon</div>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" stroke="#c9c9c9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <polyline points="15 6 9 12 15 18" />
+        </svg>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">Mon</div>
+        </div>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">Tue</div>
+        </div>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">Wed</div>
+        </div>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">Thu</div>
+        </div>
+        <div>
+          <div class="bold small">21°</div>
+          <div class="time-icon"></div>
+          <div class="bold big">Fri</div>
+        </div>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" stroke="#c9c9c9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <polyline points="9 6 15 12 9 18" />
+        </svg>
       </div>
       <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>Tue</div>
-      </div>
-      <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>Wed</div>
-      </div>
-      <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>Thu</div>
-      </div>
-      <div>
-        <div>21°</div>
-        <div class="time-icon"></div>
-        <div>Fri</div>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#2e364d" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
+        <svg class="click" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" fill="#c9c9c9" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <circle cx="12" cy="12" r="4" />
+        </svg>
       </div>
     </div>
   </main>
