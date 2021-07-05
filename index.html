@@ -10,15 +10,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header id="search-box" class="main-section">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#c9c9c9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="10" cy="10" r="7" />
+      <line x1="21" y1="21" x2="15" y2="15" />
+    </svg>
+    <input type="text" placeholder="New York, NY">
+  </header>
   <main>
-    <div id="search-box" class="main-section">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#c9c9c9" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <circle cx="10" cy="10" r="7" />
-        <line x1="21" y1="21" x2="15" y2="15" />
-      </svg>
-      <input type="text" placeholder="New York, NY">
-    </div>
     <div id="top-box" class="main-section">
       <div>
         <div>
@@ -37,6 +37,7 @@
           <circle cx="12" cy="12" r="4" />
         </svg>
       </div>
+      <div class="cover"></div>
     </div>
     <div id="middle-box" class="main-section">
       <div>
@@ -46,31 +47,31 @@
         </svg>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">12:00</div>
           <div class="small">AM</div>
         </div>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">1:00</div>
           <div class="small">AM</div>
         </div>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">2:00</div>
           <div class="small">AM</div>
         </div>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">3:00</div>
           <div class="small">AM</div>
         </div>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">4:00</div>
           <div class="small">AM</div>
         </div>
@@ -101,6 +102,7 @@
           <circle cx="12" cy="12" r="4" />
         </svg>
       </div>
+      <div class="cover"></div>
     </div>
     <div id="bottom-box" class="main-section">
       <div>
@@ -110,27 +112,27 @@
         </svg>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">Mon</div>
         </div>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">Tue</div>
         </div>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">Wed</div>
         </div>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">Thu</div>
         </div>
         <div>
           <div class="bold small">21°</div>
-          <div class="time-icon"></div>
+          <div class="small-icon"></div>
           <div class="bold big">Fri</div>
         </div>
         <svg class="click" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" stroke="#c9c9c9" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -147,6 +149,23 @@
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
           <circle cx="12" cy="12" r="4" />
         </svg>
+      </div>
+      <div class="cover"></div>
+    </div>
+    <div id="loading">
+      <div class="lds-default">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   </main>
