@@ -118,20 +118,22 @@ export const smallStorm = (() => {
   return svg;
 })();
 
-export const bigWind = (() => {
+export const bigMist = (() => {
   const svg = base("150", "#b8d1de", "1");
   svg.appendChild(makePath("M0 0h24v24H0z", "none", "none"));
-  svg.appendChild(makePath("M5 8h8.5a2.5 2.5 0 1 0 -2.34 -3.24"));
-  svg.appendChild(makePath("M3 12h15.5a2.5 2.5 0 1 1 -2.34 3.24"));
-  svg.appendChild(makePath("M4 16h5.5a2.5 2.5 0 1 1 -2.34 3.24"));
+  svg.appendChild(makePath("M5 5h3m4 0h9"));
+  svg.appendChild(makePath("M3 10h11m4 0h1"));
+  svg.appendChild(makePath("M5 15h5m4 0h7"));
+  svg.appendChild(makePath("M3 20h9m4 0h3"));
   return svg;
 })();
 
-export const smallWind = (() => {
+export const smallMist = (() => {
   const svg = base("48", "#c9c9c9", "1.25");
   svg.appendChild(makePath("M0 0h24v24H0z", "none", "none"));
-  svg.appendChild(makePath("M5 8h8.5a2.5 2.5 0 1 0 -2.34 -3.24"));
-  svg.appendChild(makePath("M3 12h15.5a2.5 2.5 0 1 1 -2.34 3.24"));
-  svg.appendChild(makePath("M4 16h5.5a2.5 2.5 0 1 1 -2.34 3.24"));
+  svg.appendChild(makePath("M5 5h3m4 0h9"));
+  svg.appendChild(makePath("M3 10h11m4 0h1"));
+  svg.appendChild(makePath("M5 15h5m4 0h7"));
+  svg.appendChild(makePath("M3 20h9m4 0h3"));
   return svg;
 })();
