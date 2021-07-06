@@ -22,8 +22,8 @@ const weather = (() => {
     });
   };
 
-  const getCoords = async function(place) {
-    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${place}`);
+  const getLocation = async function(location) {
+    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${location}`);
     const data = await response.json();
     return {
       lat: data[0].lat,
@@ -44,9 +44,17 @@ const weather = (() => {
     };
   };
 
+  const getData = async function(location) {
+    const locationData = await getLocation(location);
+    const weatherData = await getWeather(locationData.lat, locationData.lon);
+    return {
+      ...locationData,
+      ...weatherData
+    };
+  }
+
   return {
-    getCoords,
-    getWeather
+    getData
   };
 
 })();
