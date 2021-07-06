@@ -12,6 +12,26 @@ import * as svg from "./svg";
     document.querySelector("#city").textContent = data.city;
     document.querySelector("#big-icon").appendChild(svg[data.icon]);
 
+    // display middle hourly box
+    document.querySelectorAll("#middle-box > div > div").forEach((hourBox, index) => {
+      const hourData = data.hourly[index];
+      const [time, period] = hourData.time.split(" ");
+
+      hourBox.querySelector(".bold.small").textContent = `${hourData.temp}°`;
+      hourBox.querySelector(".small-icon").appendChild(svg[hourData.icon].cloneNode(true));
+      hourBox.querySelector(".bold.big").textContent = time;
+      hourBox.querySelector(".period").textContent = period;
+    });
+
+    // display bottom weekly box
+    document.querySelectorAll("#bottom-box > div > div").forEach((dayBox, index) => {
+      const dayData = data.weekly[index];
+
+      dayBox.querySelector(".bold.small").textContent = `${dayData.temp}°`;
+      dayBox.querySelector(".small-icon").appendChild(svg[dayData.icon].cloneNode(true));
+      dayBox.querySelector(".bold.big").textContent = dayData.time;
+    });
+
   };
 
   // initialize weather screen with default
