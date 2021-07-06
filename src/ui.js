@@ -4,6 +4,10 @@ import * as svg from "./svg";
 (function() {
 
   const displayWeather = async function(location) {
+    // show loading
+    document.querySelectorAll(".cover").forEach(cover => cover.style.display = "block");
+    document.querySelector(".lds-default").style.display = "inline-block";
+
     const data = await weather.getData(location);
     console.log(data);
 
@@ -32,12 +36,14 @@ import * as svg from "./svg";
       dayBox.querySelector(".bold.big").textContent = dayData.time;
     });
 
+    // hide loading
+    document.querySelectorAll(".cover").forEach(cover => cover.style.display = "none");
+    document.querySelector(".lds-default").style.display = "none";
   };
-
-  // initialize weather screen with default
+  
   (async function() {
+    // initialize weather screen with default
     await displayWeather("New York, NY");
-    // stop showing the loading screen
   })();
 
   // add error overlay when can't load weather
