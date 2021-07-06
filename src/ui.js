@@ -3,11 +3,12 @@ import * as svg from "./svg";
 
 (function() {
 
-  const isLoading = function(bool) {
+  let isLoading = true;
+
+  const toggleLoading = function(bool) {
     document.querySelectorAll(".cover").forEach(cover => cover.style.display = bool ? "block" : "none");
     document.querySelector(".lds-default").style.display = bool ? "inline-block" : "none";
-    document.querySelector("#search-box input").disabled = bool;
-    document.querySelector("#search-box").style.visibility = bool ? "hidden" : "visible";
+    isLoading = bool;
   };
 
   const addIcon = function(parent, iconName) {
@@ -20,7 +21,7 @@ import * as svg from "./svg";
   }
 
   const displayWeather = async function(location) {
-    isLoading(true);
+    toggleLoading(true);
 
     const data = await weather.getData(location);
     console.log(data);
@@ -50,20 +51,17 @@ import * as svg from "./svg";
       dayBox.querySelector(".bold.big").textContent = dayData.time;
     });
 
-    isLoading(false);
+    toggleLoading(false);
   };
   
   (async function() {
     // initialize weather screen with default
     await displayWeather("New York, NY");
     document.querySelector("#search-box input").addEventListener("keypress", (e) => {
-      if(e.key === "Enter") {
+      if(!isLoading && e.key === "Enter") {
         displayWeather(e.target.value.trim());
       }
     });
   })();
-
-  // add error overlay when can't load weather
-  
 
 })();
