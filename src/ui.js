@@ -9,6 +9,8 @@ import * as svg from "./svg";
   };
 
   const toggleLoading = function(bool) {
+    document.querySelector(".error").style.display = "none";
+    document.querySelector(".lds-default").style.display = "inline-block";
     document.querySelectorAll(".cover").forEach(cover => cover.style.display = bool ? "block" : "none");
     document.querySelector("#loading").style.visibility = bool ? "visible" : "hidden";
     state.isLoading = bool;
@@ -90,20 +92,26 @@ import * as svg from "./svg";
   const displayWeather = async function(location) {
     toggleLoading(true);
 
-    const data = await weather.getData(location);
-    Object.assign(state, data);
-    state.weeklyNum = 0;
-    state.hourlyNum = 0;
+    try {
+      const data = await weather.getData(location);
+      Object.assign(state, data);
+      state.weeklyNum = 0;
+      state.hourlyNum = 0;
 
-    // display top box
-    document.querySelector("#big-temp").textContent = `${data["temp" + state.unit]}°`;
-    document.querySelector("#city").textContent = data.city;
-    addIcon(document.querySelector("#big-icon"), data.icon);
-  
-    displayHourly();
-    displayWeekly();
+      document.querySelector("#big-temp").textContent = `${data["temp" + state.unit]}°`;
+      document.querySelector("#city").textContent = data.city;
+      addIcon(document.querySelector("#big-icon"), data.icon);
+    
+      displayHourly();
+      displayWeekly();
 
-    toggleLoading(false);
+      toggleLoading(false);
+    }
+    catch(e) {
+      document.querySelector(".lds-default").style.display = "none";
+      document.querySelector(".error").style.display = "flex";
+      state.isLoading = false;
+    }
   };
   
   (async function() {
