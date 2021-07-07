@@ -1,5 +1,4 @@
 html, body {
-  height: 100vh;
   font-family: 'Roboto', sans-serif;
   color: #c9c9c9;
   background-color: #f6f6f6;
@@ -7,11 +6,11 @@ html, body {
 
 main {
   position: relative;
-  height: 90vh;
   margin: 0 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+}
+
+main .main-section {
+  margin-top: 3rem;
 }
 
 .error {
@@ -104,6 +103,8 @@ main {
 
 #loading {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   display: flex;
