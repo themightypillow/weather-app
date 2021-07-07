@@ -37,7 +37,8 @@ const weather = (() => {
     const data = await response.json();
     const now = new Date();
     return {
-      temp: Math.ceil(data.current.temp),
+      tempF: Math.ceil(data.current.temp),
+      tempC: Math.ceil((data.current.temp - 32) * (5 / 9)),
       icon: `big${findWeatherType(data.current.weather[0].id)}`,
       hourly: formatWeatherData(now, data.hourly.slice(0, 24), true),
       weekly: formatWeatherData(now, data.daily.slice(1), false)

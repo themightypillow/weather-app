@@ -3,12 +3,24 @@ import * as svg from "./svg";
 
 (function() {
 
-  let isLoading = true;
+  const state = {
+    isLoading: false,
+    unit: "F"
+  };
 
   const toggleLoading = function(bool) {
     document.querySelectorAll(".cover").forEach(cover => cover.style.display = bool ? "block" : "none");
-    document.querySelector(".lds-default").style.display = bool ? "inline-block" : "none";
-    isLoading = bool;
+    document.querySelector("#loading").style.visibility = bool ? "visible" : "hidden";
+    state.isLoading = bool;
+  };
+
+  const switchUnits = function(unit) {
+    if(state.unit !== unit) {
+      document.querySelector(`#${unit}`).setAttribute("stroke", "#2e364d");
+      document.querySelector(`#${state.unit}`).setAttribute("stroke", "#c9c9c9");
+      document.querySelector("#big-temp").textContent = `${state["temp" + unit]}°`;
+      state.unit = unit;
+    }
   };
 
   const addIcon = function(parent, iconName) {
@@ -25,9 +37,10 @@ import * as svg from "./svg";
 
     const data = await weather.getData(location);
     console.log(data);
+    Object.assign(state, data);
 
     // display top box
-    document.querySelector("#big-temp").textContent = `${data.temp}°`;
+    document.querySelector("#big-temp").textContent = `${data.tempF}°`;
     document.querySelector("#city").textContent = data.city;
     addIcon(document.querySelector("#big-icon"), data.icon);
   
@@ -57,11 +70,16 @@ import * as svg from "./svg";
   (async function() {
     // initialize weather screen with default
     await displayWeather("New York, NY");
+
+    // search bar functionality
     document.querySelector("#search-box input").addEventListener("keypress", (e) => {
-      if(!isLoading && e.key === "Enter") {
+      if(!state.isLoading && e.key === "Enter") {
         displayWeather(e.target.value.trim());
       }
     });
+
+    document.querySelector("#F").addEventListener("click", (e) => switchUnits("F"));
+    document.querySelector("#C").addEventListener("click", (e) => switchUnits("C"));
   })();
 
 })();
