@@ -15,7 +15,8 @@ const weather = (() => {
   const formatWeatherData = function(now, dataArray, isHour) {
     return dataArray.map((data, index) => {
       return {
-        temp: Math.ceil(isHour ? data.temp : data.temp.day),
+        tempF: Math.ceil(isHour ? data.temp : data.temp.day),
+        tempC: Math.ceil(isHour ? (data.temp - 32) * (5 / 9) : (data.temp.day - 32) * (5 / 9)),
         icon: `small${findWeatherType(data.weather[0].id)}`,
         time: isHour ? format(addHours(now, index + 1), "h:00 aa") : format(addDays(now, index + 1), "E")
       };

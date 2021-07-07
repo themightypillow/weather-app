@@ -16,9 +16,22 @@ import * as svg from "./svg";
 
   const switchUnits = function(unit) {
     if(state.unit !== unit) {
+      // update top box
       document.querySelector(`#${unit}`).setAttribute("stroke", "#2e364d");
       document.querySelector(`#${state.unit}`).setAttribute("stroke", "#c9c9c9");
       document.querySelector("#big-temp").textContent = `${state["temp" + unit]}°`;
+
+      // update hourly box
+      document.querySelectorAll("#middle-box > div > div").forEach((hourBox, index) => {
+        hourBox.querySelector(".bold.small").textContent = `${state.hourly[index]["temp" + unit]}°`;
+      });
+
+      // update weekly box
+      document.querySelectorAll("#bottom-box > div > div").forEach((dayBox, index) => {
+        dayBox.querySelector(".bold.small").textContent = `${state.weekly[index]["temp" + unit]}°`;
+      });
+
+
       state.unit = unit;
     }
   };
@@ -49,7 +62,7 @@ import * as svg from "./svg";
       const hourData = data.hourly[index];
       const [time, period] = hourData.time.split(" ");
 
-      hourBox.querySelector(".bold.small").textContent = `${hourData.temp}°`;
+      hourBox.querySelector(".bold.small").textContent = `${hourData.tempF}°`;
       addIcon(hourBox.querySelector(".small-icon"), hourData.icon)
       hourBox.querySelector(".bold.big").textContent = time;
       hourBox.querySelector(".period").textContent = period;
@@ -59,7 +72,7 @@ import * as svg from "./svg";
     document.querySelectorAll("#bottom-box > div > div").forEach((dayBox, index) => {
       const dayData = data.weekly[index];
 
-      dayBox.querySelector(".bold.small").textContent = `${dayData.temp}°`;
+      dayBox.querySelector(".bold.small").textContent = `${dayData.tempF}°`;
       addIcon(dayBox.querySelector(".small-icon"), dayData.icon)
       dayBox.querySelector(".bold.big").textContent = dayData.time;
     });
