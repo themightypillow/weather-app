@@ -37,12 +37,19 @@ const weather = (() => {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=imperial&appid=c88ef095fba1959850e425433fdde06e`);
     const data = await response.json();
     const now = new Date();
+    const hourly = formatWeatherData(now, data.hourly.slice(0, 24), true);
+    const weekly = formatWeatherData(now, data.daily.slice(1), false);
     return {
       tempF: Math.ceil(data.current.temp),
       tempC: Math.ceil((data.current.temp - 32) * (5 / 9)),
       icon: `big${findWeatherType(data.current.weather[0].id)}`,
-      hourly: formatWeatherData(now, data.hourly.slice(0, 24), true),
-      weekly: formatWeatherData(now, data.daily.slice(1), false)
+      hourly0: hourly.slice(0, 5),
+      hourly1: hourly.slice(5, 10),
+      hourly2: hourly.slice(10, 15),
+      hourly3: hourly.slice(15, 20),
+      hourly4: hourly.slice(20),
+      weekly0: weekly.slice(0, 5),
+      weekly1: weekly.slice(5)
     };
   };
 
